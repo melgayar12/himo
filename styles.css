@@ -797,6 +797,10 @@ a {
   box-shadow: var(--shadow);
 }
 
+.chat-panel[hidden] {
+  display: none;
+}
+
 .chat-messages {
   display: grid;
   align-content: start;

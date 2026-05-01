@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Himo online | Admin Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Himo online home">
+        <span class="brand-mark">H</span>
+        <span>Himo online Admin</span>
+      </a>
+      <nav class="main-nav" aria-label="Admin navigation">
+        <a href="/">Store</a>
+        <a href="#products">Products</a>
+        <a href="#orders">Orders</a>
+        <a href="#chat">Chat</a>
+      </nav>
+      <div class="header-actions">
+        <button class="small-button" id="adminLogout" type="button">Logout</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-hero">
+        <div>
+          <p class="eyebrow">Control panel</p>
+          <h1>Manage products, orders, and customer conversations.</h1>
+        </div>
+        <div class="admin-metrics" id="adminMetrics"></div>
+      </section>
+
+      <section class="admin-panel" id="loginPanel">
+        <div>
+          <p class="eyebrow">Admin login</p>
+          <h2>Sign in to continue</h2>
+          <p class="muted">Default demo admin: admin@himo.local / admin123</p>
+        </div>
+        <form class="stack-form" id="adminLoginForm">
+          <input name="email" type="email" value="admin@himo.local" aria-label="Admin email" required />
+          <input name="password" type="password" value="admin123" aria-label="Admin password" required />
+          <button class="primary-action" type="submit">Login</button>
+        </form>
+      </section>
+
+      <section class="admin-grid" id="adminWorkspace" hidden>
+        <section class="admin-panel" id="products">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="eyebrow">Inventory</p>
+              <h2>Products</h2>
+            </div>
+          </div>
+          <form class="product-editor" id="productForm">
+            <input name="id" type="hidden" />
+            <label>Name<input name="name" required /></label>
+            <label>Category<input name="category" required /></label>
+            <label>Price<input name="price" type="number" min="1" step="0.01" required /></label>
+            <label>Rating<input name="rating" type="number" min="1" max="5" step="0.1" required /></label>
+            <label>Stock<input name="stock" type="number" min="0" required /></label>
+            <label>Image path<input name="image" required /></label>
+            <label>Upload image<input name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" /></label>
+            <div class="image-preview" id="productImagePreview" aria-label="Product image preview"></div>
+            <label class="wide-field">Description<textarea name="description" rows="3" required></textarea></label>
+            <div class="form-actions">
+              <button class="primary-action" type="submit">Save Product</button>
+              <button class="small-button" id="clearProductForm" type="button">Clear</button>
+            </div>
+          </form>
+          <div class="admin-list" id="adminProducts"></div>
+        </section>
+
+        <section class="admin-panel" id="orders">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="eyebrow">Fulfillment</p>
+              <h2>Orders</h2>
+            </div>
+          </div>
+          <div class="admin-list" id="adminOrders"></div>
+        </section>
+
+        <section class="admin-panel" id="chat">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="eyebrow">Support</p>
+              <h2>Customer chat</h2>
+            </div>
+          </div>
+          <div class="chat-admin-layout">
+            <div class="customer-list" id="customerList"></div>
+            <div class="chat-box admin-chat-box">
+              <div class="chat-messages" id="adminChatMessages"></div>
+              <form class="chat-form" id="adminChatForm">
+                <input name="text" placeholder="Reply to customer" aria-label="Reply to customer" required />
+                <button class="primary-action" type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Shopping website hero artwork</title>
+  <desc id="desc">Colorful shopping bags and product boxes arranged on a soft background.</desc>
+  <rect width="900" height="700" rx="40" fill="#ece8dd"/>
+  <circle cx="705" cy="146" r="76" fill="#f97316" opacity=".22"/>
+  <circle cx="164" cy="550" r="118" fill="#0f766e" opacity=".16"/>
+  <path d="M157 485c52-116 129-192 232-229 111-40 223-11 336 86 45 38 63 88 55 149-9 61-42 106-99 135-91 45-194 51-310 18-130-36-201-89-214-159Z" fill="#fff" opacity=".78"/>
+  <g transform="translate(190 214)">
+    <path d="M69 151h158l25 238H44l25-238Z" fill="#0f766e"/>
+    <path d="M93 151c2-64 27-96 75-96 47 0 72 32 74 96h-31c-2-43-16-65-43-65s-42 22-44 65H93Z" fill="#115e59"/>
+    <path d="M75 203h151l17 164H58l17-164Z" fill="#14b8a6" opacity=".38"/>
+    <circle cx="145" cy="278" r="38" fill="#f8fafc"/>
+    <path d="M131 279h29v47h-29z" fill="#0f766e"/>
+    <path d="M121 266h49v19h-49z" fill="#f97316"/>
+  </g>
+  <g transform="translate(468 120)">
+    <path d="M26 191h199l22 288H4l22-288Z" fill="#fff"/>
+    <path d="M46 191c4-79 35-119 94-119 58 0 89 40 94 119h-36c-5-55-24-83-58-83s-53 28-58 83H46Z" fill="#cbd5e1"/>
+    <path d="M50 231h151l13 205H34l16-205Z" fill="#f97316"/>
+    <path d="M73 265h104l9 138H62l11-138Z" fill="#fed7aa"/>
+  </g>
+  <g transform="translate(372 350)">
+    <rect x="0" y="86" width="185" height="170" rx="18" fill="#1f2937"/>
+    <path d="M0 104 90 32l95 72-94 72L0 104Z" fill="#334155"/>
+    <path d="M91 176 185 104v152H0V104l91 72Z" fill="#111827"/>
+    <path d="M74 2h45l66 102-94 72L0 104 74 2Z" fill="#e2e8f0"/>
+    <path d="M76 84h42v46H76z" fill="#0f766e"/>
+  </g>
+  <g transform="translate(618 385)">
+    <rect x="0" y="37" width="136" height="166" rx="16" fill="#f8fafc"/>
+    <path d="M18 37c3-48 22-72 57-72s54 24 57 72h-27c-3-30-13-45-30-45S48 7 45 37H18Z" fill="#94a3b8"/>
+    <path d="M27 69h82v96H27z" fill="#0f766e" opacity=".18"/>
+    <circle cx="68" cy="116" r="28" fill="#f97316"/>
+  </g>
+</svg>

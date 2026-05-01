@@ -100,6 +100,21 @@
             </div>
           </div>
         </section>
+
+        <section class="admin-panel" id="settings">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="eyebrow">Security</p>
+              <h2>Change admin password</h2>
+            </div>
+          </div>
+          <form class="stack-form narrow-form" id="changePasswordForm">
+            <input name="currentPassword" type="password" placeholder="Current password" aria-label="Current password" required />
+            <input name="newPassword" type="password" minlength="6" placeholder="New password" aria-label="New password" required />
+            <input name="confirmPassword" type="password" minlength="6" placeholder="Confirm new password" aria-label="Confirm new password" required />
+            <button class="primary-action" type="submit">Update Password</button>
+          </form>
+        </section>
       </section>
     </main>
 

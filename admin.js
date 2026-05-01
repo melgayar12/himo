@@ -290,6 +290,30 @@ document.querySelector("#adminChatForm").addEventListener("submit", async (event
   }
 });
 
+document.querySelector("#changePasswordForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const form = new FormData(event.currentTarget);
+  const newPassword = String(form.get("newPassword") || "");
+  const confirmPassword = String(form.get("confirmPassword") || "");
+  if (newPassword !== confirmPassword) {
+    showToast("New passwords do not match");
+    return;
+  }
+  try {
+    await api("/api/auth/change-password", {
+      method: "POST",
+      body: JSON.stringify({
+        currentPassword: form.get("currentPassword"),
+        newPassword
+      })
+    });
+    event.currentTarget.reset();
+    showToast("Password updated");
+  } catch (error) {
+    showToast(error.message);
+  }
+});
+
 init().catch((error) => {
   setWorkspace(false);
   showToast(error.message);

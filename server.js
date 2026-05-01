@@ -191,6 +191,22 @@ async function handleApi(req, res, pathname) {
     return sendJson(res, 200, { ok: true }, { "Set-Cookie": "himo_session=; Max-Age=0; HttpOnly; SameSite=Lax; Path=/" });
   }
 
+  if (req.method === "POST" && pathname === "/api/auth/change-password") {
+    const session = requireUser(req, res, db);
+    if (!session) return;
+    const body = await readBody(req);
+    const currentPassword = String(body.currentPassword || "");
+    const newPassword = String(body.newPassword || "");
+    if (newPassword.length < 6) return sendError(res, 400, "New password must be at least 6 characters.");
+    const user = db.users.find((item) => item.id === session.user.id);
+    if (!verifyPassword(currentPassword, user.passwordHash)) return sendError(res, 401, "Current password is incorrect.");
+    user.passwordHash = hashPassword(newPassword);
+    user.updatedAt = now();
+    db.sessions = db.sessions.filter((item) => item.userId !== user.id || item.id === session.session.id);
+    writeDb(db);
+    return sendJson(res, 200, { ok: true });
+  }
+
   if (req.method === "GET" && pathname === "/api/auth/me") {
     const session = getSession(req, db);
     return sendJson(res, 200, { user: publicUser(session && session.user) });

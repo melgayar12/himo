@@ -758,6 +758,10 @@ a {
   gap: 12px;
 }
 
+.narrow-form {
+  max-width: 440px;
+}
+
 .stack-form input,
 .chat-form input,
 .product-editor input,

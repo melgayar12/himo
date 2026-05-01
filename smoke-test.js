@@ -42,7 +42,7 @@ const server = app.listen(PORT, async () => {
     const customerLogin = await request("/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: "Test Customer", email, password: "secret123" })
+      body: JSON.stringify({ name: "Test Customer", email, phone: "+966500000000", password: "secret123" })
     });
     const customerCookie = cookieFrom(customerLogin);
     const order = await json(await request("/api/orders", {

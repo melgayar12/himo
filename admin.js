@@ -75,7 +75,7 @@ function renderOrders() {
     <article class="admin-card order-card">
       <div>
         <strong>Order #${order.id} - ${order.customerName}</strong>
-        <span>${order.customerEmail} - ${new Date(order.createdAt).toLocaleString()}</span>
+        <span>${order.customerEmail}${order.customerPhone ? ` - ${order.customerPhone}` : ""} - ${new Date(order.createdAt).toLocaleString()}</span>
         <p>${order.items.map((item) => `${item.quantity}x ${item.name}`).join(", ")}</p>
       </div>
       <div class="order-controls">
@@ -92,7 +92,7 @@ function renderCustomers() {
   customerList.innerHTML = state.customers.length ? state.customers.map((customer) => `
     <button class="customer-button ${customer.id === state.selectedCustomerId ? "active" : ""}" type="button" data-customer="${customer.id}">
       <strong>${customer.name}</strong>
-      <span>${customer.email}</span>
+      <span>${customer.email}${customer.phone ? ` - ${customer.phone}` : ""}</span>
     </button>
   `).join("") : `<p class="empty-state">No customers yet.</p>`;
 }

@@ -46,7 +46,7 @@ function verifyPassword(password, stored) {
 
 function publicUser(user) {
   if (!user) return null;
-  return { id: user.id, name: user.name, email: user.email, role: user.role };
+  return { id: user.id, name: user.name, email: user.email, phone: user.phone || "", role: user.role };
 }
 
 function seedAdmin() {
@@ -162,10 +162,11 @@ async function handleApi(req, res, pathname) {
     const body = await readBody(req);
     const name = String(body.name || "").trim();
     const email = String(body.email || "").trim().toLowerCase();
+    const phone = String(body.phone || "").trim();
     const password = String(body.password || "");
-    if (!name || !email || password.length < 6) return sendError(res, 400, "Name, email, and a 6 character password are required.");
+    if (!name || !email || !phone || password.length < 6) return sendError(res, 400, "Name, email, phone number, and a 6 character password are required.");
     if (db.users.some((user) => user.email === email)) return sendError(res, 409, "This email already has an account.");
-    const user = { id: nextId(db.users), name, email, role: "customer", passwordHash: hashPassword(password), createdAt: now() };
+    const user = { id: nextId(db.users), name, email, phone, role: "customer", passwordHash: hashPassword(password), createdAt: now() };
     const session = { id: crypto.randomUUID(), userId: user.id, createdAt: now() };
     db.users.push(user);
     db.sessions.push(session);
@@ -242,6 +243,7 @@ async function handleApi(req, res, pathname) {
       userId: session.user.id,
       customerName: session.user.name,
       customerEmail: session.user.email,
+      customerPhone: session.user.phone || "",
       items: orderItems,
       subtotal,
       discount,

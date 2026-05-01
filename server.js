@@ -57,7 +57,7 @@ function seedAdmin() {
       name: "Himo Admin",
       email: "admin@himo.local",
       role: "admin",
-      passwordHash: hashPassword("admin123"),
+      passwordHash: hashPassword("1234@Admin"),
       createdAt: now()
     });
     writeDb(db);

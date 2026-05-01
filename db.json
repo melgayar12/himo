@@ -77,7 +77,7 @@
       "name": "Himo Admin",
       "email": "admin@himo.local",
       "role": "admin",
-      "passwordHash": "94ebd127809c458ab90f5bf7ded21a74:1cc226adcfd35a89c71193914418d8a8f376c9e8521bf433268d6df2ae2f8f44",
+      "passwordHash": "himo-admin-reset:7ae2dd8ddd6c6ff41e289b992e997f77196c96d2988b2391880155c3e0e5b0bf",
       "createdAt": "2026-05-01T19:39:59.419Z"
     },
     {

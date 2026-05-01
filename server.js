@@ -374,7 +374,6 @@ const app = http.createServer(async (req, res) => {
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Himo online server running at http://localhost:${PORT}`);
-    console.log("Admin login: admin@himo.local / admin123");
   });
 }
 

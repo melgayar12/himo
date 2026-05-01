@@ -17,17 +17,6 @@ Render will provide a public URL such as:
 https://your-service-name.onrender.com
 ```
 
-## Admin Login
-
-The demo admin account is seeded automatically:
-
-```text
-Email: admin@himo.local
-Password: admin123
-```
-
-Change this before using the site publicly.
-
 ## Important Production Notes
 
 This version stores data in `db.json`. That is fine for a demo, but a production shop should use:

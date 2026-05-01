@@ -25,6 +25,7 @@ const authButton = document.querySelector("#authButton");
 const logoutButton = document.querySelector("#logoutButton");
 const chatPanel = document.querySelector("#chatPanel");
 const chatMessages = document.querySelector("#chatMessages");
+chatPanel.hidden = true;
 
 const money = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -362,6 +363,9 @@ document.querySelector("#closeAuth").addEventListener("click", () => authModal.c
 document.querySelector("#openChat").addEventListener("click", async () => {
   chatPanel.hidden = !chatPanel.hidden;
   if (!chatPanel.hidden) await loadChat().catch((error) => showToast(error.message));
+});
+document.querySelector("#closeChat").addEventListener("click", () => {
+  chatPanel.hidden = true;
 });
 
 document.querySelectorAll(".auth-tab").forEach((button) => {

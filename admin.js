@@ -18,7 +18,7 @@ const productImagePreview = document.querySelector("#productImagePreview");
 
 const money = new Intl.NumberFormat("en-US", {
   style: "currency",
-  currency: "USD"
+  currency: "QAR"
 });
 
 async function api(path, options = {}) {
